@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: static/img
+public_folder: /img
+collections:
+  - name: 'articles'
+    label: 'Articles'
+    folder: 'content/articles'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: "Title of article", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author(s)", name: "author", widget: "string" }
+      - { label: "Category", name: "categories", widget: "select", options: ["Editorial", "How-To", "Humour", "Interview", "Meta", "Op-Ed", "Review"] }
+      - { label: "Primary Image", name: "primary_image", widget: "image", choose_url: true }
+      - { label: "Primary Image Credit", name: "primary_image_credit", widget: "textarea" }
+      - { label: "Short Description", name: "short_description", widget: "textarea" }
+      - { label: "Disclaimer", name: "disclaimer", widget: "textarea" }
+      - { label: "Preamble", name: "preamble", widget: "textarea" }
+      - { label: "Postamble", name: "postamble", widget: "textarea" }
+      - { label: "Youtube URL", name: "youtube_url", widget: "string" }
+      - { label: "Related Articles", name: "related_articles", widget: "list" }
+      - { label: "People", name: "related_people", widget: "list" }
+      - { label: "Companies", name: "related_companies", widget: "list" }
+      - { label: "Body of Document", name: "body", widget: "markdown" }
